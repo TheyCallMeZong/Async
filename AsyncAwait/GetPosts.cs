@@ -26,9 +26,6 @@ namespace AsyncAwait
             for (int i = 3; i <= 13; i++)
                 result.Add(GetPost(i));
             await Task.WhenAll(result);
-
-            Thread.Sleep(1000);
-
             foreach (var e in result)
                 File.AppendAllText(path, e.Result.ToString());
         }
